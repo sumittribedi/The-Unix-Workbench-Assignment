@@ -1,11 +1,8 @@
-README.md:
-	{ \
-	touch README.md ;\
-	echo "## The Unix Workbench Assignment" >> README.md ;\
-	date=$$(date) ;\
-	echo "Makefile ran at : $$date"  >> README.md ;\
-	lines=$$(wc -l < guessinggame.sh);\
-	echo "Guessinggame.sh contains $$lines lines of code."  >> README.md ;\
-	}
-clean:
-	rm README.md
+# initiate variables
+date=$(shell date)
+n_lines=$(shell wc -l guessinggame.sh | egrep -o "[0-9]+")
+
+README.md: guessinggame.sh
+	echo "Title: Guessing Game  " > README.md
+	echo "The date and time at which \`make\` was run: $(date)  " >> README.md
+	echo "Number of lines contained in \`guessinggame.sh\`: $(n_lines)  " >> README.md
