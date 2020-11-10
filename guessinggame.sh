@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # File: guessinggame.sh
 # Project: Coursera assignment
-
 function check_number {
-
 final_flag=0
 while [[ $final_flag -eq 0 ]]
 do
@@ -24,5 +22,4 @@ else
 fi
 done
 }
-
 check_number
